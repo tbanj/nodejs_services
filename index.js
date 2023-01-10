@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 
-const authRoutes = require("./routes/auth.js");
+const orderSRVRoutes = require("./routes/orderService.js");
+const paymentSRVRoutes = require("./routes/paymentService.js");
 const app = express();
 
 require("dotenv").config();
@@ -16,5 +17,6 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use("/auth", authRoutes);
+app.use("/order", orderSRVRoutes);
+app.use("/payment", paymentSRVRoutes);
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
