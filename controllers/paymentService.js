@@ -13,6 +13,8 @@ const paymentList = async (req, res) => {
       ],
     },
   };
+
+  res.status(200).json(response);
 };
 
 module.exports = { paymentList };

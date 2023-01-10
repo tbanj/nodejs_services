@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Order Service Called!");
 });
 
 app.use("/order", orderSRVRoutes);
