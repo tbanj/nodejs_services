@@ -2,18 +2,14 @@
 
 ## Introduction
 
-This application makes use of text-davinci model from openai to develop a robust chat system with high accuracy which can be use by leaners to learn any major skill.
+Implementing Microservice Architecture In Node JS
 
-Client application is developed with Vite
-Backend application is developed with Node.js
+We have two services Order and Payment with API Gateway.
 
 Live demonstrtion of the application is hosted at
 https://temicodex.vercel.app/
 
 Demo server url will be added soon
-![Home Page](https://user-images.githubusercontent.com/20041050/209759084-71f6a723-4062-41ee-88bf-e364339281d3.png)
-
-![Accuracy Check](https://user-images.githubusercontent.com/20041050/209759120-ad076f88-57c6-4146-80cc-a8eb11891aed.png)
 
 Setup:
 
