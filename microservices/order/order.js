@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 
-const orderSRVRoutes = require("../routes/orderService.js");
+const orderSRVRoutes = require("../../routes/orderService.js");
 const app = express();
 
 require("dotenv").config();
