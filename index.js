@@ -1,6 +1,6 @@
-const gateway = require("");
+const gateway = require("fast-gateway");
 
-const port = 9001;
+const PORT = process.env.PORT || 9001;
 const server = gateway({
   routes: [
     {
@@ -20,6 +20,6 @@ server.get("/mytesting", (req, res) => {
   res.send("Gateway Called");
 });
 
-server.start(port).then((server) => {
-  console.log("Gateway is running " + port);
+server.start(PORT).then((server) => {
+  console.log("Gateway is running " + PORT);
 });
