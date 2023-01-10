@@ -3,6 +3,6 @@ const { paymentList } = require("../controllers/paymentService");
 
 const router = express.Router();
 
-router.post("/payment-list", paymentList);
+router.get("/payment-list", paymentList);
 
 module.exports = router;

@@ -1,6 +1,6 @@
 // should be use when .env data is
 require("dotenv").config();
-const orderList = async (req, res) => {
+const orderList = (req, res) => {
   let response = {
     data: {
       item: [
@@ -15,6 +15,8 @@ const orderList = async (req, res) => {
       ],
     },
   };
+
+  res.status(200).json(response);
 };
 
 module.exports = { orderList };
