@@ -1,22 +1,25 @@
-const express = require("express");
-const cors = require("cors");
+const gateway = require("");
 
-const orderSRVRoutes = require("./routes/orderService.js");
-const paymentSRVRoutes = require("./routes/paymentService.js");
-const app = express();
-
-require("dotenv").config();
-
-const PORT = process.env.PORT || 5000;
-
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded());
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+const port = 9001;
+const server = gateway({
+  routes: [
+    {
+      prefix: "/order",
+      target: "http://localhost:8081/",
+      hooks: {},
+    },
+    {
+      prefix: "/payment",
+      target: "http://localhost:8082/",
+      hooks: {},
+    },
+  ],
 });
 
-app.use("/order", orderSRVRoutes);
-app.use("/payment", paymentSRVRoutes);
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+server.get("/mytesting", (req, res) => {
+  res.send("Gateway Called");
+});
+
+server.start(port).then((server) => {
+  console.log("Gateway is running " + port);
+});
